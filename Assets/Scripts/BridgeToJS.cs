@@ -4,37 +4,24 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Runtime.InteropServices;
 
-public class BridgeToJS : MonoBehaviour
+public static class BridgeToJS 
 {
-    [SerializeField] TimeController timeController;
 
-    [SerializeField] string moscowTime, moscowTimeLate;
 #if UNITY_WEBGL && !UNITY_EDITOR
     [DllImport("__Internal")]
     private static extern void ShowMessage(string message);
 
 
 #endif
-    private void Update()
-    {
-        if (moscowTimeLate != moscowTime)
-        {
-            SendToJS();
 
-            moscowTimeLate = moscowTime;
-        }
+
+    public static void SendToJS(string time)
+    {
+        #if UNITY_WEBGL && !UNITY_EDITOR
+
+            ShowMessage(time);
+
+        #endif
     }
 
-    public void SendToJS()
-    {
-#if UNITY_WEBGL && !UNITY_EDITOR
-
-    ShowMessage(moscowTime);
-
-#endif
-    }
-    public void SetMoscowTime(string time)
-    {
-        moscowTime = time;
-    }
 }

@@ -594,7 +594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eec5676454b1c184cb7b879618e3fa9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  url: http://api.timezonedb.com/v2.1/get-time-zone?key=0B4SE0AFL5SX&format=json&by=zone&zone=Europe/Moscow
+  url: https://api.timezonedb.com/v2.1/get-time-zone?key=0B4SE0AFL5SX&format=json&by=zone&zone=Europe/Moscow
   bridge: {fileID: 607646334}
 --- !u!4 &945255126
 Transform:

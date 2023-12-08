@@ -15,10 +15,7 @@ public class TimeController : MonoBehaviour
     public void GetMoscowTime()
     {
         StartCoroutine(GetTimeFromSite());
-        if (textMoscowTime != null)
-        {
-            bridge.SetMoscowTime(textMoscowTime);
-        }
+
     }
 
     private IEnumerator GetTimeFromSite()
@@ -36,6 +33,11 @@ public class TimeController : MonoBehaviour
         }
         //Debug.Log(request.downloadHandler.text);
         Debug.Log(textMoscowTime);
+        if (textMoscowTime != null)
+        {
+            bridge.SetMoscowTime(textMoscowTime);
+        }
+        textMoscowTime = null;
     }
 }
 
